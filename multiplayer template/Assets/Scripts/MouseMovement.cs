@@ -13,6 +13,9 @@ public class MouseMovement : MonoBehaviour
     {
         if (networkidentity.isLocalPlayer)
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             playerBody = transform.root;
         }
 
@@ -20,6 +23,7 @@ public class MouseMovement : MonoBehaviour
         {
             gameObject.transform.GetComponent<Camera>().enabled = false;
             gameObject.transform.GetComponent<AudioListener>().enabled = false;
+            gameObject.transform.tag = "Untagged";
         }
     }
 
