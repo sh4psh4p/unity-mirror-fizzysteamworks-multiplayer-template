@@ -145,8 +145,8 @@ public class MenuManager : MonoBehaviour
 
     public void HostGame()
     {
-        //Transport.activeTransport = KCPTransport;
-        //networkManager.transport = KCPTransport;
+        Transport.activeTransport = KCPTransport;
+        networkManager.transport = KCPTransport;
 
         networkManager.StartHost();
 
@@ -158,8 +158,8 @@ public class MenuManager : MonoBehaviour
 
     public void SteamHostGame()
     {
-        //Transport.activeTransport = FizzySteamworksTransport;
-        //networkManager.transport = FizzySteamworksTransport;
+        Transport.activeTransport = FizzySteamworksTransport;
+        networkManager.transport = FizzySteamworksTransport;
 
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, networkManager.maxConnections);
 
@@ -210,8 +210,8 @@ public class MenuManager : MonoBehaviour
 
     public void JoinGame()
     {
-        //Transport.activeTransport = KCPTransport;
-        //networkManager.transport = KCPTransport;
+        Transport.activeTransport = KCPTransport;
+        networkManager.transport = KCPTransport;
 
         networkManager.StartClient();
 
