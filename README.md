@@ -1,10 +1,9 @@
 readme updated 20/06/2022
 
+
 - unity version 2021.3.4f1
 - mirror version 66.0.9
 - fizzysteamworks version 4.1.1
-
-a simple multiplayer template made to speed up my projects
 
 main menu buttons:
 - host game on network (port forward required for others to join)
