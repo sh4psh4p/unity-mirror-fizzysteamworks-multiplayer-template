@@ -173,6 +173,8 @@ public class MenuManager : MonoBehaviour
 
     private void OnGameLobbyJoinRequested(GameLobbyJoinRequested_t callback)
     {
+        PlayerName = "SteamPlayer";
+
         SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
     }
 
@@ -182,8 +184,6 @@ public class MenuManager : MonoBehaviour
         {
             return;
         }
-
-        PlayerName = "SteamPlayer";
 
         string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
 
