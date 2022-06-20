@@ -11,7 +11,6 @@ public class MenuManager : MonoBehaviour
     public GameObject GameMenu;
     public GameObject PauseMenu;
     public GameObject HostGameMenuObject;
-    public GameObject HostGameOnSteamMenuObject;
     public GameObject JoinGameMenuObject;
     public GameObject Player;
     public string PlayerName = "Player";
@@ -114,19 +113,6 @@ public class MenuManager : MonoBehaviour
     {
         HostGameMenuObject.SetActive(true);
 
-        HostGameOnSteamMenuObject.SetActive(false);
-
-        JoinGameMenuObject.SetActive(false);
-
-        MenuAnimation.SetBool("EnableMenu", true);
-    }
-
-    public void HostGameOnSteamMenu()
-    {
-        HostGameOnSteamMenuObject.SetActive(true);
-
-        HostGameMenuObject.SetActive(false);
-
         JoinGameMenuObject.SetActive(false);
 
         MenuAnimation.SetBool("EnableMenu", true);
@@ -137,8 +123,6 @@ public class MenuManager : MonoBehaviour
         JoinGameMenuObject.SetActive(true);
 
         HostGameMenuObject.SetActive(false);
-
-        HostGameOnSteamMenuObject.SetActive(false);
 
         MenuAnimation.SetBool("EnableMenu", true);
     }
@@ -158,6 +142,8 @@ public class MenuManager : MonoBehaviour
 
     public void SteamHostGame()
     {
+        PlayerName = "SteamPlayer";
+
         Transport.activeTransport = FizzySteamworksTransport;
         networkManager.transport = FizzySteamworksTransport;
 
@@ -196,6 +182,8 @@ public class MenuManager : MonoBehaviour
         {
             return;
         }
+
+        PlayerName = "SteamPlayer";
 
         string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
 
